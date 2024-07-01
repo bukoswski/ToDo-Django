@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Tarefas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cadastro.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Tarefas</h1>
+        <p>Muito bem vamos gravar suas tarefas da semana</p>
+
+        <div class="form-container">
+            <form method="post" action="{% url "cadastro" %}">
+                {% csrf_token %}
+                <div class="form-grup">
+                    <label for="tarfea">Tarefa</label>
+                    <input type="text" id="tarefa" name="tarefa" placeholder="Tarefa" required><br><br>
+    
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" placeholder="Descrição" ><br><br>
+    
+                    <label for="data_entrega">Data da Entrega</label>
+                    <input type="datetime-local" id="data_entrega" name="data_entrega" placeholder="Data Da Entrega" required><br><br>
+                </div>
+    
+            <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+
+    {% comment %} <form method="post" action="{% url "cadastro" %}">
+        {% csrf_token %}
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Título" required><br><br>
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" placeholder="Descrição" ><br><br>
+
+        <label for="data_entrega">Data da Entrega</label>
+        <input type="datetime-local" id="data_entrega" name="data_entrega" placeholder="Data Da Entrega" required><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+    {% endcomment %}
+</body>
+</html>
