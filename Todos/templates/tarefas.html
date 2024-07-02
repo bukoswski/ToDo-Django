@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suas Tarefas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tarefas.css' %}">
 </head>
 <body>
     <h1>Aqui estão suas tarefas</h1>
 
-    <ul>
-        {% for tarefa in tarefas %}
-            <li>
-                {{ tarefa.tarefa }} - {{ tarefa.descricao }} - {{ tarefa.data_entrega }}
-                <a href="{% url 'editar' tarefa.id %}">Editar</a>
-            </li>
-        {% endfor %}
-
+    <div class="container">
+        <h1>Aqui estão suas tarefas</h1>
+        <ul class="tarefas-lista">
+            {% for tarefa in tarefas %}
+                <li class="tarefa-item">
+                    <div class="tarefa-info">
+                        <span class="nome-tarefa">{{ tarefa.tarefa }}</span> <br>
+                        <span class="descricao">{{ tarefa.descricao }}</span> <br>
+                        <span class="data-criacao">Criado em: {{ tarefa.data_criacao }}</span>
+                    </div>
+                    <div class="tarefa-info">
+                        <span class="data-entrega">Entrega: {{ tarefa.data_entrega }}</span>
+                        <label class="checkbox-label">
+                            Concluída: 
+                            <input type="checkbox" {% if tarefa.concluida %}checked{% endif %} enabled>
+                        </label>
+                        <a href="{% url 'editar' tarefa.id %}" class="editar-link">Editar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,0 +1,74 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos da lista de tarefas */
+.tarefas-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tarefa-item {
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.tarefa-info {
+    flex: 1;
+}
+
+.nome-tarefa {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.descricao {
+    color: #555;
+    font-size: 1rem;
+}
+
+.data-criacao, .data-entrega {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.editar-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.editar-link:hover {
+    text-decoration: underline;
+}
