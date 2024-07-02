@@ -8,14 +8,13 @@
 <body>
     <h1>Aqui estão suas tarefas</h1>
 
-        <ul>
-            {% for tarefa in tarefas  %}
-                <li>
-                    {{ tarefa.tarefa }} - {{tarefa.data_criacao}} - {{tarefa.data_entrega}} 
-                </li>
-            {% endfor %}
-        </ul>
-
+    <ul>
+        {% for tarefa in tarefas %}
+            <li>
+                {{ tarefa.tarefa }} - {{ tarefa.descricao }} - {{ tarefa.data_entrega }}
+                <a href="{% url 'editar' tarefa.id %}">Editar</a>
+            </li>
+        {% endfor %}
 
 </body>
 </html>

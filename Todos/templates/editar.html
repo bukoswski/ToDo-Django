@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Editar!!</h1>
+    <p>Vamos editar algo!</p>
+
+    <form method="POST" action="{% url 'editar' todo.id %}">
+        {% csrf_token %}
+        <label for="tarefa">Tarefa:</label>
+        <input type="text" name="tarefa" id="tarefa" placeholder="Tarefa" value="{{ todo.tarefa }}"> <br> <br>
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" id="descricao" placeholder="Descrição" value="{{ todo.descricao }}"> <br> <br>
+        <label for="data_entrega">Data de Entrega:</label>
+        <input type="date" name="data_entrega" id="data_entrega" value="{{ todo.data_entrega|date:'Y-m-d' }}"> 
+        <br> <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+
+
+
+    <!-- <form method == 'POST' action="{% url "editar" 2%}">
+        {% csrf_token %}
+        <label for="tarefa">Tarefa:</label>
+        <input type="text" name="tarefa" id="tarefa" placeholder="Tarefa" value="{{todo.tarefa}}"> <br> <br>
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" id="tarefa" placeholder="Descrição" value={{todo.descricao}} ><br><br>
+        <label for="data_entrega">Data de Entrega:</label>
+        <input type="date" name="data_entrega" id="data_entrega" value={{todo.data_entrega}}> 
+        <br><br>
+
+        <button type="submit" >Enviar</button>
+
+    </form> -->
